@@ -25,27 +25,33 @@
     <div class="container">
         <h1 class="page-title">Network Status</h1>
 
-        <!-- Main Proxy -->
+        <!-- Main Proxy (Horizontal with Total Players) -->
         <div class="main-status">
             <div>
                 <h2>MAIN PROXY</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">129.154.254.49:25565</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">mc.divinemc.dpdns.org</p>
             </div>
-            <div id="main-badge" class="status-badge offline-bg">
-                <div class="dot dot-offline"></div>
-                <span>Checking...</span>
+            <div class="proxy-right">
+                <div class="total-players">
+                    <span id="proxy-count">0</span> Players Online
+                </div>
+                <div id="main-badge" class="status-badge offline-bg">
+                    <div class="dot dot-offline"></div>
+                    <span>Checking...</span>
+                </div>
             </div>
         </div>
 
-        <div class="grid">
+        <!-- Horizontal Grid for Game Modes -->
+        <div class="grid-horizontal">
             <!-- Hub -->
             <div class="card">
                 <h3>DIVINE HUB</h3>
                 <div id="hub-badge" class="status-badge offline-bg" style="font-size: 0.9rem; margin-bottom: 10px;">
                     <div class="dot dot-offline"></div><span>Checking...</span>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Players Online: <strong id="hub-count">0</strong></p>
-                <div class="player-list" id="hub-players">Fetching player names...</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Players: <strong id="hub-count">0</strong></p>
+                <div class="player-list" id="hub-players">Fetching...</div>
             </div>
 
             <!-- Survival -->
@@ -54,17 +60,17 @@
                 <div id="survival-badge" class="status-badge offline-bg" style="font-size: 0.9rem; margin-bottom: 10px;">
                     <div class="dot dot-offline"></div><span>Checking...</span>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Players Online: <strong id="survival-count">0</strong></p>
-                <div class="player-list" id="survival-players">Fetching player names...</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Players: <strong id="survival-count">0</strong></p>
+                <div class="player-list" id="survival-players">Fetching...</div>
             </div>
 
             <!-- Practice -->
             <div class="card">
                 <h3>PVP PRACTICE</h3>
-                <div class="soon-text">
+                <div class="soon-text" style="margin-top: 10px;">
                     <span>⏳</span> Launching Soon
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">This gamemode is currently in development.</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">In development.</p>
             </div>
         </div>
     </div>
