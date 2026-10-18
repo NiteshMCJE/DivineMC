@@ -24,7 +24,7 @@ async function fetchStatus(ip, port, badgeId, countId = null, playersId = null) 
                     if (data.players.list && data.players.list.length > 0) {
                         players.innerHTML = data.players.list.map(p => `<span>${p.name_clean}</span>`).join('');
                     } else {
-                        players.innerHTML = 'No players currently online.';
+                        players.innerHTML = 'No players online.';
                     }
                 }
             }
@@ -39,22 +39,22 @@ async function fetchStatus(ip, port, badgeId, countId = null, playersId = null) 
             }
             if (playersId) {
                 const players = document.getElementById(playersId);
-                if (players) players.innerHTML = 'Server is offline.';
+                if (players) players.innerHTML = 'Server offline.';
             }
         }
     } catch (error) {
-        console.error("Error fetching server status for port " + port, error);
+        console.error("Error fetching status for port " + port, error);
     }
 }
 
 // Run on page load
 window.onload = () => {
-    // Main Proxy (No player names/count needed, just status)
-    fetchStatus('129.154.254.49', '25565', 'main-badge');
+    // Main Proxy (Fetches Total Players)
+    fetchStatus('129.154.254.49', '25565', 'main-badge', 'proxy-count');
     
-    // Hub (Status, Count, and Player Names)
+    // Hub (Fetches Players & Names)
     fetchStatus('129.154.254.49', '25566', 'hub-badge', 'hub-count', 'hub-players');
     
-    // Survival (Status, Count, and Player Names)
+    // Survival (Fetches Players & Names)
     fetchStatus('129.154.254.49', '25567', 'survival-badge', 'survival-count', 'survival-players');
 };
