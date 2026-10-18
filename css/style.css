@@ -196,10 +196,11 @@ nav {
    STATUS PAGE
    ========================================= */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 60px auto;
     padding: 0 20px;
     flex: 1;
+    width: 100%;
 }
 
 .page-title {
@@ -210,6 +211,7 @@ nav {
     letter-spacing: 2px;
 }
 
+/* Main Proxy Alignment */
 .main-status {
     background: var(--bg-card);
     border: 2px solid #333;
@@ -218,7 +220,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .main-status h2 {
@@ -227,6 +229,33 @@ nav {
     letter-spacing: 1px;
 }
 
+.proxy-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.total-players {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: #111;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.total-players span {
+    color: var(--online);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Status Badges */
 .status-badge {
     padding: 10px 20px;
     border-radius: 5px;
@@ -264,17 +293,20 @@ nav {
     background: var(--offline);
 }
 
-.grid {
+/* Horizontal Grid for Game Modes */
+.grid-horizontal {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Forces 3 columns side-by-side */
     gap: 20px;
 }
 
-.card {
+.grid-horizontal .card {
     background: var(--bg-card);
     border: 1px solid #333;
     border-radius: 10px;
     padding: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card h3 {
@@ -410,4 +442,38 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin-top: auto;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 850px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .main-status {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .proxy-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .grid-horizontal {
+        grid-template-columns: 1fr; /* Stacks vertically on phones */
+    }
+
+    .split {
+        flex-direction: column;
+    }
 }
