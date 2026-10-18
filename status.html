@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine MC | Network Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="images/logo.png" alt="Divine MC Logo" class="logo-img">
+            <span class="logo-text">DIVINE MC</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="status.html" class="active">Network Status</a>
+            <a href="join.html">How to Join</a>
+            <a href="https://discord.gg/M5pJBUN6nw" target="_blank" style="color: var(--discord);">Discord</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Network Status</h1>
+
+        <!-- Main Proxy -->
+        <div class="main-status">
+            <div>
+                <h2>MAIN PROXY</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">129.154.254.49:25565</p>
+            </div>
+            <div id="main-badge" class="status-badge offline-bg">
+                <div class="dot dot-offline"></div>
+                <span>Checking...</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Hub -->
+            <div class="card">
+                <h3>DIVINE HUB</h3>
+                <div id="hub-badge" class="status-badge offline-bg" style="font-size: 0.9rem; margin-bottom: 10px;">
+                    <div class="dot dot-offline"></div><span>Checking...</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Players Online: <strong id="hub-count">0</strong></p>
+                <div class="player-list" id="hub-players">Fetching player names...</div>
+            </div>
+
+            <!-- Survival -->
+            <div class="card">
+                <h3>SURVIVAL</h3>
+                <div id="survival-badge" class="status-badge offline-bg" style="font-size: 0.9rem; margin-bottom: 10px;">
+                    <div class="dot dot-offline"></div><span>Checking...</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Players Online: <strong id="survival-count">0</strong></p>
+                <div class="player-list" id="survival-players">Fetching player names...</div>
+            </div>
+
+            <!-- Practice -->
+            <div class="card">
+                <h3>PVP PRACTICE</h3>
+                <div class="soon-text">
+                    <span>⏳</span> Launching Soon
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">This gamemode is currently in development.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Divine MC. Not affiliated with Mojang or Microsoft.</p>
+    </footer>
+
+    <script src="js/status.js"></script>
+</body>
+</html>

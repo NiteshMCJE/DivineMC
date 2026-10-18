@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine MC | How to Join</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="images/logo.png" alt="Divine MC Logo" class="logo-img">
+            <span class="logo-text">DIVINE MC</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="status.html">Network Status</a>
+            <a href="join.html" class="active">How to Join</a>
+            <a href="https://discord.gg/M5pJBUN6nw" target="_blank" style="color: var(--discord);">Discord</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">How to Join</h1>
+        <p class="subtitle">Divine MC fully supports both Java and Bedrock editions.</p>
+
+        <div class="split">
+            <!-- Java Edition -->
+            <div class="box">
+                <h2>Java Edition</h2>
+                <ol class="steps">
+                    <li>Open Minecraft Java Edition.</li>
+                    <li>Click <strong>Multiplayer</strong> -> <strong>Add Server</strong>.</li>
+                    <li>Paste the IP below into the Server Address field.</li>
+                    <li>Click <strong>Done</strong> and join!</li>
+                </ol>
+                <div class="ip-box" id="java-ip">mc.divinemc.dpdns.org</div>
+                <button class="btn-copy" onclick="copyText('java-ip', this)">COPY JAVA IP</button>
+            </div>
+
+            <!-- Bedrock Edition -->
+            <div class="box">
+                <h2>Bedrock Edition</h2>
+                <ol class="steps">
+                    <li>Open Minecraft Bedrock (PC, Console, or Mobile).</li>
+                    <li>Go to <strong>Play</strong> -> <strong>Servers</strong> -> <strong>Add Server</strong>.</li>
+                    <li>Enter the IP and Port below.</li>
+                    <li>Save and join!</li>
+                </ol>
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <div class="ip-box" style="flex: 2; margin-bottom: 0;" id="bedrock-ip">129.154.254.49</div>
+                    <div class="ip-box" style="flex: 1; margin-bottom: 0;" id="bedrock-port">25565</div>
+                </div>
+                <button class="btn-copy" onclick="copyBedrock(this)">COPY IP & PORT</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Divine MC. Not affiliated with Mojang or Microsoft.</p>
+    </footer>
+
+    <script>
+        function copyText(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "COPIED!";
+                btn.classList.add("copied");
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove("copied");
+                }, 2000);
+            });
+        }
+
+        function copyBedrock(btn) {
+            const ip = document.getElementById('bedrock-ip').innerText;
+            const port = document.getElementById('bedrock-port').innerText;
+            const textToCopy = `IP: ${ip}\nPort: ${port}`;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                btn.innerText = "COPIED!";
+                btn.classList.add("copied");
+                setTimeout(() => {
+                    btn.innerText = "COPY IP & PORT";
+                    btn.classList.remove("copied");
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
