@@ -433,55 +433,110 @@ nav {
 }
 
 /* =========================================
-   DISCORD WIDGET SECTION
+   CUSTOM DISCORD CARD SECTION
    ========================================= */
 .discord-section {
     background: var(--bg-dark);
     padding: 80px 20px;
+    display: flex;
+    justify-content: center;
     border-top: 1px solid #333;
 }
 
-.discord-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
+.discord-card {
+    background: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 50px 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.discord-info {
-    flex: 1;
-    min-width: 300px;
+.discord-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(88, 101, 242, 0.15);
+    border-color: rgba(88, 101, 242, 0.5);
 }
 
-.discord-info h2 {
+.discord-header svg {
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(88, 101, 242, 0.4));
+}
+
+.discord-header h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    line-height: 1.1;
+    color: var(--text-main);
 }
 
-.discord-info p {
+.discord-header p {
     color: var(--text-muted);
     font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-.discord-widget-wrapper {
-    flex: 1;
-    min-width: 300px;
-    background: #2f3136; /* Discord's dark theme background */
+.discord-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: #111;
+    padding: 20px;
     border-radius: 10px;
-    padding: 10px;
-    border: 1px solid #444;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2a2a2a;
 }
 
-.discord-widget-wrapper iframe {
-    border-radius: 5px;
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: #333;
+}
+
+.btn-join-discord {
     display: block;
+    width: 100%;
+    background: var(--discord);
+    color: white;
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-join-discord:hover {
+    background: var(--discord-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
 }
 
 /* =========================================
