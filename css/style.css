@@ -433,6 +433,58 @@ nav {
 }
 
 /* =========================================
+   DISCORD WIDGET SECTION
+   ========================================= */
+.discord-section {
+    background: var(--bg-dark);
+    padding: 80px 20px;
+    border-top: 1px solid #333;
+}
+
+.discord-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.discord-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.discord-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.discord-info p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.discord-widget-wrapper {
+    flex: 1;
+    min-width: 300px;
+    background: #2f3136; /* Discord's dark theme background */
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #444;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.discord-widget-wrapper iframe {
+    border-radius: 5px;
+    display: block;
+}
+
+/* =========================================
    FOOTER
    ========================================= */
 footer {
@@ -475,5 +527,11 @@ footer {
 
     .split {
         flex-direction: column;
+    }
+    
+    .discord-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
     }
 }
