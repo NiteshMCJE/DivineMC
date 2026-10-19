@@ -57,4 +57,7 @@ window.onload = () => {
     
     // Survival (Fetches Players & Names)
     fetchStatus('129.154.254.49', '25567', 'survival-badge', 'survival-count', 'survival-players');
+
+    // PvP Practice (Fetches Players & Names) -- NEW!
+    fetchStatus('129.154.254.49', '25568', 'practice-badge', 'practice-count', 'practice-players');
 };
